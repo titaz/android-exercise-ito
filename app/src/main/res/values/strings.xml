@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">My cooking</string>
+    <string name="menu_recipes">Recipes</string>
+    <string name="menu_attempted">Attempted</string>
+
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_close">Close</string>
+
+    <string name="recipe_btn_rate">Have you cooked this dish?</string>
+
+    <string name="total_disaster">It was a total disaster</string>
+    <string name="it_was_edible">It was edible</string>
+    <string name="perfection">It was a true perfection</string>
+
+    <string name="easy">Easy</string>
+    <string name="normal">Normal</string>
+    <string name="hard">Hard</string>
+
+    <string name="save_attempt_sheet_title">So, you have cooked this dish.</string>
+    <string name="save_attempt_sheet_message">How did it go?</string>
+    <string name="empty_list">Empty list</string>
+    <string name="error_generic">Generic error</string>
+
+
+</resources>

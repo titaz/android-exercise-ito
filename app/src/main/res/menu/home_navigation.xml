@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/recipesController"
+        android:icon="@drawable/ic_recipes"
+        android:title="@string/menu_recipes" />
+    <item
+        android:id="@+id/attemptsController"
+        android:icon="@drawable/ic_service"
+        android:title="@string/menu_attempted" />
+</menu>

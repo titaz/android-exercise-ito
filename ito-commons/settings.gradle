@@ -1,0 +1,3 @@
+include ':app',
+        ':ito-commons'
+project(":ito-commons").projectDir = file("lib")

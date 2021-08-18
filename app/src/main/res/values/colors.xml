@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorTabAccent">#5856d6</color>
+    <color name="colorTabNormal">#969596</color>
+    <color name="colorTabBackground">#f8f7f8</color>
+    <color name="colorBackground">#f1f1f1</color>
+    <color name="colorBackgroundAccent">#ffffff</color>
+    <color name="colorBackgroundSecondary">#eaeaea</color>
+    <color name="colorBackgroundInfo">#ededed</color>
+    <color name="colorDim">#50000000</color>
+    <color name="colorDivider">#50000000</color>
+    <color name="colorText">#000000</color>
+    <color name="colorButtonTextPrimary">#5756d5</color>
+    <color name="colorButtonTextWarning">#ff9502</color>
+    <color name="colorProgressBackground">#50000000</color>
+</resources>
