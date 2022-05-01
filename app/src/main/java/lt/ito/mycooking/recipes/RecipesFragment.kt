@@ -1,4 +1,5 @@
-package lt.ito.mycooking.recipes
+package lt.ito.my
+
 
 import android.view.LayoutInflater
 import android.view.View
@@ -14,12 +15,17 @@ import lt.ito.components.recipes.RecipesPresenter
 import lt.ito.models.Recipe
 import lt.ito.mycooking.ITOApplication
 import lt.ito.mycooking.base.BaseFragment
+import lt.ito.components.base.RecyclerViewItem
+import lt.ito.mycooking.recipes.RecyclerViewAdapter
+import lt.ito.components.base.SectionItem
+import lt.ito.models.Difficulty
 import javax.inject.Inject
 
 
 class RecipesFragment : BaseFragment(), RecipesContract, OnItemClickListener<Recipe> {
 
-    private val adapter: RecipesAdapter = RecipesAdapter(this)
+//    private var adapter: RecipesSectionedAdapter? = null
+    private var adapter1: RecyclerViewAdapter? = null
 
     @Inject
     lateinit var recipesPresenter: RecipesPresenter
@@ -34,9 +40,13 @@ class RecipesFragment : BaseFragment(), RecipesContract, OnItemClickListener<Rec
         val dividerItemDecoration = DividerItemDecoration(
             activity?.applicationContext!!,
             llm.orientation)
-        view.recyclerView.adapter = adapter
-        view.recyclerView.layoutManager = llm
-        view.recyclerView.addItemDecoration(dividerItemDecoration)
+
+
+//        adapter = RecipesSectionedAdapter(context,this)
+        adapter1 = RecyclerViewAdapter()
+        view.rv.adapter = adapter1
+        view.rv.layoutManager = llm
+        view.rv.addItemDecoration(dividerItemDecoration)
     }
 
     override fun onStart() {
@@ -51,7 +61,17 @@ class RecipesFragment : BaseFragment(), RecipesContract, OnItemClickListener<Rec
     }
 
     override fun updateDataList(recipes: List<Recipe>) {
-        adapter.setValues(recipes)
+
+        val dataSet = ArrayList<RecyclerViewItem>()
+
+            dataSet.add(SectionItem("EASY"))
+            recipesPresenter.createSectionsList(dataSet,Difficulty.EASY,recipes,this)
+            dataSet.add(SectionItem("Normal"))
+            recipesPresenter.createSectionsList(dataSet,Difficulty.NORMAL,recipes,this)
+            dataSet.add(SectionItem("Hard"))
+            recipesPresenter.createSectionsList(dataSet,Difficulty.HARD,recipes,this)
+
+        adapter1?.setValues(dataSet)
     }
 
     override fun onClick(position: Int, item: Recipe) {

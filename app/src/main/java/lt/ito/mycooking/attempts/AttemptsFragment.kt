@@ -12,9 +12,9 @@ import lt.ito.components.attempts.AttemptsContract
 import lt.ito.components.attempts.AttemptsPresenter
 import lt.ito.components.base.OnItemClickListener
 import lt.ito.models.Dish
+import lt.ito.my.RecipesFragmentDirections
 import lt.ito.mycooking.ITOApplication
 import lt.ito.mycooking.base.BaseFragment
-import lt.ito.mycooking.recipes.RecipesFragmentDirections
 import javax.inject.Inject
 
 class AttemptsFragment : BaseFragment(), AttemptsContract, OnItemClickListener<Dish> {

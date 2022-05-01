@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/recipesController"
-        android:name="lt.ito.mycooking.recipes.RecipesFragment"
+        android:name="lt.ito.my.RecipesFragment"
         tools:layout="@layout/controller_recipes">
         <action
             android:id="@+id/navigate_to_recipe"

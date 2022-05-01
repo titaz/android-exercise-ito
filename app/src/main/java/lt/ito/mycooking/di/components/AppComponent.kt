@@ -7,6 +7,7 @@ import dagger.Component
 import lt.ito.AppFileUtils
 import lt.ito.components.schedulers.SchedulerProvider
 import lt.ito.components.test.IdlingResourceCountable
+import lt.ito.my.RecipesFragment
 import lt.ito.mycooking.ITOApplication
 import lt.ito.mycooking.UiTestModule
 import lt.ito.mycooking.attempts.AttemptsFragment
@@ -15,7 +16,6 @@ import lt.ito.mycooking.di.modules.NetworkModule
 import lt.ito.mycooking.di.modules.RepositoryModule
 import lt.ito.mycooking.launcher.LauncherActivity
 import lt.ito.mycooking.recipe.RecipeFragment
-import lt.ito.mycooking.recipes.RecipesFragment
 import javax.inject.Singleton
 
 @Singleton

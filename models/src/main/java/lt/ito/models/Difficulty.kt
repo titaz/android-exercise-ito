@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 enum class Difficulty {
     @SerializedName("easy")
-    EASY,
+    EASY ,
 
     @SerializedName("normal")
     NORMAL,
@@ -21,5 +21,15 @@ val Difficulty.color: Int
             Difficulty.NORMAL -> return Color.YELLOW
             Difficulty.HARD -> return Color.RED
             else -> return Color.BLACK
+        }
+    }
+
+val Difficulty.name: String
+    get() {
+        when (this) {
+            Difficulty.EASY -> return "EASY"
+            Difficulty.NORMAL -> return "NORMAL"
+            Difficulty.HARD -> return "HARD"
+            else -> return "NA"
         }
     }
