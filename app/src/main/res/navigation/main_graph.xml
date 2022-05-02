@@ -7,13 +7,21 @@
 
     <fragment
         android:id="@+id/recipesController"
-        android:name="lt.ito.mycooking.recipes.RecipesFragment"
+        android:name="lt.ito.my.RecipesFragment"
         tools:layout="@layout/controller_recipes">
         <action
             android:id="@+id/navigate_to_recipe"
             app:destination="@id/recipeController" />
     </fragment>
 
+    <fragment
+        android:id="@+id/recommendationsController"
+        android:name="lt.ito.my.RecommendationsFragment"
+        tools:layout="@layout/controller_recommendations">
+        <action
+            android:id="@+id/navigate_to_recipe"
+            app:destination="@id/recipeController" />
+    </fragment>
     <fragment
         android:id="@+id/recipeController"
         android:name="lt.ito.mycooking.recipe.RecipeFragment"
@@ -26,5 +34,9 @@
     <fragment
         android:id="@+id/attemptsController"
         android:name="lt.ito.mycooking.attempts.AttemptsFragment"
-        tools:layout="@layout/controller_attempts" />
+        tools:layout="@layout/controller_attempts" >
+        <action
+            android:id="@+id/navigate_to_recipe"
+            app:destination="@id/recipeController" />
+    </fragment>
 </navigation>

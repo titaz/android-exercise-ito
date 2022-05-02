@@ -12,7 +12,6 @@ import lt.ito.components.base.OnItemClickListener
 import lt.ito.models.Recipe
 import lt.ito.models.color
 import lt.ito.mycooking.utils.stringResId
-
 class RecipesAdapter(
     private val onItemClickListener: OnItemClickListener<Recipe>
 ) : RecyclerView.Adapter<RecipesAdapter.RecipesHolder>() {
@@ -33,6 +32,7 @@ class RecipesAdapter(
         holder.difficultyView.setText(dataItem.difficulty.stringResId)
         holder.difficultyView.setTextColor(dataItem.difficulty.color)
         holder.itemView.setOnClickListener { onItemClickListener.onClick(position, dataItem) }
+
     }
 
     fun setValues(newRecipes: List<Recipe>) {
