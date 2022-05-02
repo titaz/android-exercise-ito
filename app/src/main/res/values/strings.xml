@@ -20,6 +20,7 @@
     <string name="save_attempt_sheet_message">How did it go?</string>
     <string name="empty_list">Empty list</string>
     <string name="error_generic">Generic error</string>
+    <string name="menu_recommendations">Suggestions</string>
 
 
 </resources>

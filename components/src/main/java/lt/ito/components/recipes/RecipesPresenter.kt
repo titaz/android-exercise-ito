@@ -1,7 +1,6 @@
 package lt.ito.components.recipes
 
 
-import android.view.View
 import lt.ito.components.base.BasePresenter
 import lt.ito.components.base.ContentItem
 import lt.ito.components.base.OnItemClickListener
@@ -11,7 +10,6 @@ import lt.ito.components.schedulers.SchedulerProvider
 import lt.ito.components.test.IdlingResourceCountable
 import lt.ito.models.Difficulty
 import lt.ito.models.Recipe
-import lt.ito.models.SectionedRecipes
 import javax.inject.Inject
 
 

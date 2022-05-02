@@ -9,29 +9,31 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import it.ito.mycooking.R
 import kotlinx.android.synthetic.main.controller_recipes.view.*
+import lt.ito.components.Recommendations.RecommendationsContract
+import lt.ito.components.Recommendations.RecommendationsPresenter
 import lt.ito.components.base.OnItemClickListener
-import lt.ito.components.recipes.RecipesContract
-import lt.ito.components.recipes.RecipesPresenter
 import lt.ito.models.Recipe
 import lt.ito.mycooking.ITOApplication
 import lt.ito.mycooking.base.BaseFragment
 import lt.ito.components.base.RecyclerViewItem
 import lt.ito.mycooking.recipes.RecyclerViewAdapter
-import lt.ito.components.base.SectionItem
+import lt.ito.components.base.SimpleTextItem
 import lt.ito.models.Difficulty
+import lt.ito.models.Dish
 import javax.inject.Inject
 
 
-class RecipesFragment : BaseFragment(), RecipesContract, OnItemClickListener<Recipe> {
+class RecommendationsFragment : BaseFragment(), RecommendationsContract, OnItemClickListener<Recipe> {
 
     private var adapter: RecyclerViewAdapter? = null
 
+    private var recipes:MutableList<Recipe> = mutableListOf()
     @Inject
-    lateinit var recipesPresenter: RecipesPresenter
+    lateinit var recommendationsPresenter: RecommendationsPresenter
 
     override fun inflateView(inflater: LayoutInflater, container: ViewGroup?): View {
         ITOApplication.appComponent(activity?.applicationContext!!).inject(this)
-        return inflater.inflate(R.layout.controller_recipes, container, false)
+        return inflater.inflate(R.layout.controller_recommendations, container, false)
     }
 
     override fun onViewBound(view: View) {
@@ -48,27 +50,30 @@ class RecipesFragment : BaseFragment(), RecipesContract, OnItemClickListener<Rec
 
     override fun onStart() {
         super.onStart()
-        recipesPresenter.view = this
-        recipesPresenter.onAttach()
+        recommendationsPresenter.view = this
+        recommendationsPresenter.onAttach()
     }
 
     override fun onStop() {
         super.onStop()
-        recipesPresenter.view = null
+        recommendationsPresenter.view = null
     }
 
     override fun updateDataList(recipes: List<Recipe>) {
+        this.recipes = recipes.toMutableList()
+    }
 
-        val dataSet = ArrayList<RecyclerViewItem>()
-
-            dataSet.add(SectionItem("EASY"))
-            recipesPresenter.createSectionsList(dataSet,Difficulty.EASY,recipes,this)
-            dataSet.add(SectionItem("Normal"))
-            recipesPresenter.createSectionsList(dataSet,Difficulty.NORMAL,recipes,this)
-            dataSet.add(SectionItem("Hard"))
-            recipesPresenter.createSectionsList(dataSet,Difficulty.HARD,recipes,this)
-
+    fun setAdapter(dataSet:ArrayList<RecyclerViewItem>){
         adapter?.setValues(dataSet)
+    }
+
+
+    override fun displayDishes(it: List<Dish>?) {
+        if(it?.size==0){
+            setAdapter(recommendationsPresenter.createList(Difficulty.EASY,recipes,this))
+        }else
+        setAdapter(recommendationsPresenter.determineSkillLevel(it,recipes,this))
+
     }
 
     override fun onClick(position: Int, item: Recipe) {
