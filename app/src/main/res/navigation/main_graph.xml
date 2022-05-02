@@ -15,6 +15,14 @@
     </fragment>
 
     <fragment
+        android:id="@+id/recommendationsController"
+        android:name="lt.ito.my.RecommendationsFragment"
+        tools:layout="@layout/controller_recommendations">
+        <action
+            android:id="@+id/navigate_to_recipe"
+            app:destination="@id/recipeController" />
+    </fragment>
+    <fragment
         android:id="@+id/recipeController"
         android:name="lt.ito.mycooking.recipe.RecipeFragment"
         tools:layout="@layout/controller_recipe">
