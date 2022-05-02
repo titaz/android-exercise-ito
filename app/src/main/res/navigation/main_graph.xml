@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/recipesController">
+
+    <fragment
+        android:id="@+id/recipesController"
+        android:name="lt.ito.my.RecipesFragment"
+        tools:layout="@layout/controller_recipes">
+        <action
+            android:id="@+id/navigate_to_recipe"
+            app:destination="@id/recipeController" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recommendationsController"
+        android:name="lt.ito.my.RecommendationsFragment"
+        tools:layout="@layout/controller_recommendations">
+        <action
+            android:id="@+id/navigate_to_recipe"
+            app:destination="@id/recipeController" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeController"
+        android:name="lt.ito.mycooking.recipe.RecipeFragment"
+        tools:layout="@layout/controller_recipe">
+        <argument
+            android:name="recipe"
+            app:argType="lt.ito.models.Recipe" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/attemptsController"
+        android:name="lt.ito.mycooking.attempts.AttemptsFragment"
+        tools:layout="@layout/controller_attempts" >
+        <action
+            android:id="@+id/navigate_to_recipe"
+            app:destination="@id/recipeController" />
+    </fragment>
+</navigation>

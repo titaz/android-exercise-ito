@@ -1,0 +1,3 @@
+[submodule "ito-commons"]
+	path = ito-commons
+	url = git@gitlab.ito.lt:ito-android/ito-commons.git

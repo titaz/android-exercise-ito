@@ -1,0 +1,76 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Screen">
+        <item name="background">@color/colorBackground</item>
+    </style>
+
+    <style name="H1">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="H3">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="BodyText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="Label">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="DialogRateButton">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">14dp</item>
+        <item name="android:textColor">@color/colorTabAccent</item>
+    </style>
+
+    <style name="AlertDialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/fragment_fade_enter</item>
+        <item name="android:windowExitAnimation">@anim/fragment_fade_exit</item>
+    </style>
+
+    <style name="ButtonPrimary">
+        <item name="android:textColor">@color/colorButtonTextPrimary</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="ButtonWarning">
+        <item name="android:textColor">@color/colorButtonTextWarning</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ItemTitle" parent="H3">
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>>
+        <item name="android:textStyle">bold</item>
+
+    </style>
+    <style name="ItemSubtitle" parent="Label">
+        <item name="android:maxLines">1</item>>
+    </style>
+
+</resources>
